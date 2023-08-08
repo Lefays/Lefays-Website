@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>Lefay</title>
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAflBMVEVHcEwA/wD/6gD/4wD/3QD/2gD/1wD/ywD/xAD/wAD/vwD/uQD/tQD/sAD/rAD/qAD/pwD/oAD/nQD/mQD/lAD/kQD/jQD/iQD/hQD/gQD/fQD/eQD/dQD/cQD/bQD/aQD/ZwD/YwD/XwD/WgD/VgD/UgD/TgD/SgD/RgD/QgD/PgD/MAAAAC4YrL0AAAAGHRSTlMAAQIDBAUGBwgJCgsMDQ4PExQUFVhYWVpbXN1dnd4eXp7fH1+gIOHjIyWl5ebn6Onq6+zt7vH09fP1+/v4CBhFm7sAAAElSURBVDjL1ZLdS1tRGMc/vzOzO7OzO7OzO7OzO7OzO7OzO7OzO7OzO7OzO7OzO7OzO7OzO7OzO7OzO7OzO7OzN5xYUv0j8iJk5xhWj3q+q3MkqJdUdRf8…
+
   <style>
     body {
       background: url('https://th.bing.com/th/id/OIP.21HAWGFM1TJhxFlB-7l0zgHaEo?pid=ImgDet&rs=1') center/cover fixed no-repeat;
@@ -23,6 +25,11 @@
       font-weight: bold;
       margin-bottom: 20px;
       text-shadow: 2px 2px #000;
+      transition: all 0.3s ease-in-out;
+    }
+
+    h1:hover {
+      text-shadow: 4px 4px #000;
     }
 
     p {
@@ -31,6 +38,11 @@
       line-height: 1.5;
       margin-bottom: 40px;
       text-shadow: 2px 2px #000;
+      transition: all 0.3s ease-in-out;
+    }
+
+    p:hover {
+      text-shadow: 4px 4px #000;
     }
 
     .button-container {
@@ -72,131 +84,63 @@
         z-index:-1; 
         background:url('https://airflow.ind.br/wp-content/uploads/2018/03/bg_slide.png') center/cover fixed no-repeat; 
         opacity:.3; 
-        animation:bg-animation 60s ease infinite
+        animation-name:bgAnimation; 
+        animation-duration:20s; 
+        animation-timing-function:linear; 
+        animation-iteration-count:infinite;
+    }
+
+    @keyframes bgAnimation {
+        0% {background-position:center top;}
+        50% {background-position:center bottom;}
+        100% {background-position:center top;}
     }
     
-    @keyframes bg-animation {
-        from { transform: scale(1) translateX(0); }
-        to { transform: scale(1.5) translateX(-10%); }
+    /* Orange Triangle Icon */
+    .icon {
+        background-color: black;
+        height: 50px;
+        width: 50px;
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        display: inline-block;
+        margin-right: 10px;
     }
     
-    .my-dog-container {
-      position: relative;
-      margin-top: 60px;
-    }
-    
-    .my-dog-title {
-      color: #fff;
-      font-size: 28px;
-      font-weight: bold;
-      text-shadow: 2px 2px #000;
-    }
-    
-    .arrow {
-      color: #fff;
-      font-size: 36px;
-      margin-top: 10px;
-    }
-    
-    .dog-image {
-      margin-top: 20px;
-    }
-    
-    .dog-image img {
-      max-width: 100%;
-      height: auto;
-    }
-    
-    /* Animations */
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    @keyframes fadeInDown {
-        from {
-            opacity: 0;
-            transform: translateY(-50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
-    
-    @keyframes pulse {
-        from {
-            transform: scale(1);
-        }
-        to {
-            transform: scale(1.2);
-        }
-    }
-    
-    /* Hover Effects */
-    .my-dog-container:hover .arrow {
-        animation-name: pulse;
-        animation-duration: 0.5s;
-        animation-iteration-count: infinite;
-        animation-direction: alternate-reverse;
-    }
-    
-    .button:hover {
-        animation-name: fadeInUp;
-        animation-duration: 0.5s;
-        animation-fill-mode: forwards;
-    }
-    
-    .button img:hover {
-        animation-name: pulse;
-        animation-duration: 0.5s;
-        animation-iteration-count: infinite;
-        animation-direction: alternate-reverse;
-    }
-    
-    h1:hover, p:hover, .my-dog-title:hover {
-        animation-name: fadeInDown;
-        animation-duration: 0.5s;
-        animation-fill-mode: forwards;
+    .icon::before {
+        content:'';
+        position:absolute; 
+        top:-10px; 
+        left:-10px; 
+        width:70%; 
+        height:70%;
+        background-color:#FFA500; 
+        clip-path:polygon(50% 0%, 0% 100%, 100% 100%);
     }
     
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Lefay</h1>
-    <p>Hello! Welcome to my website. My name is Lefay and I'm passionate about gaming and content creation. Feel free to check out my latest videos/streams!</p>
-
+    <div class="icon"></div>
+    <h1>Welcome to Lefay</h1>
+    <p>Your one-stop destination for all your travel needs</p>
     <div class="button-container">
-      <a class="button" href="https://twitter.com/Doccy1234" target="_blank"><img src="https://th.bing.com/th?id=OIP.eZEdp__KVcYwYx4YBQzVsAHaHb&w=249&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2" alt="Twitter Logo">Twitter</a>
-      <a class="button" href="https://www.youtube.com/@Lefay_IS" target="_blank"><img src="https://th.bing.com/th?id=OIP.aByvAl4Fl4Dk3N9fA3IudwHaFM&w=298&h=209&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2" alt="YouTube Logo">YouTube</a>
-      <a class="button" href="https://www.twitch.tv/lefay_is" target="_blank"><img src="https://th.bing.com/th?id=OIP.Lmpd_vWhUPT6fz1JHr9D2gHaHv&w=244&h=255&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2" alt="Twitch Logo">Twitch</a>
-      <a class="button" href="https://discord.gg/AR4VCrJpRH" target="_blank"><img src="https://th.bing.com/th/id/OIP.EZkdm25nbQDs_PjFN8hmewAAAA?pid=ImgDet&rs=1" alt="Discord Logo">Discord</a>
+      <a class="button" href="#">
+        <img src="https://img.icons8.com/material-outlined/24/000000/search--v1.png"/>
+        Search Flights
+      </a>
+      
+      <a class="button" href="#">
+        <img src="https://img.icons8.com/material-outlined/24/000000/hotel.png"/>
+        Book Hotels
+      </a>
+      
+      <a class="button" href="#">
+        <img src="https://img.icons8.com/material-outlined/24/000000/car.png"/>
+        Rent Cars
+      </a>
     </div>
     
-    <div class="my-dog-container">
-      <h2 class="my-dog-title">My Dog</h2>
-      <div class="arrow">&#x2193;</div>
-      <div class="dog-image">
-       
-        <img src="https://media.discordapp.net/attachments/1122521939982950451/1122556871790821456/IMG_20230325_142334.png?width=507&height=676" alt="My Dog">
-      </div>
-    </div>
   </div>
 </body>
 </html>
