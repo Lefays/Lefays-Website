@@ -107,6 +107,74 @@
       height: auto;
     }
     
+    /* Animations */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes pulse {
+        from {
+            transform: scale(1);
+        }
+        to {
+            transform: scale(1.2);
+        }
+    }
+    
+    /* Hover Effects */
+    .my-dog-container:hover .arrow {
+        animation-name: pulse;
+        animation-duration: 0.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate-reverse;
+    }
+    
+    .button:hover {
+        animation-name: fadeInUp;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+    }
+    
+    .button img:hover {
+        animation-name: pulse;
+        animation-duration: 0.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate-reverse;
+    }
+    
+    h1:hover, p:hover, .my-dog-title:hover {
+        animation-name: fadeInDown;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+    }
+    
   </style>
 </head>
 <body>
