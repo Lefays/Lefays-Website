@@ -2,8 +2,6 @@
 <html>
 <head>
   <title>Lefay</title>
-  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAflBMVEVHcEwA/wD/6gD/4wD/3QD/2gD/1wD/ywD/xAD/wAD/vwD/uQD/tQD/sAD/rAD/qAD/pwD/oAD/nQD/mQD/lAD/kQD/jQD/iQD/hQD/gQD/fQD/eQD/dQD/cQD/bQD/aQD/ZwD/YwD/XwD/WgD/VgD/UgD/TgD/SgD/RgD/QgD/PgD/MAAAAC4YrL0AAAAGHRSTlMAAQIDBAUGBwgJCgsMDQ4PExQUFVhYWVpbXN1dnd4eXp7fH1+gIOHjIyWl5ebn6Onq6+zt7vH09fP1+/v4CBhFm7sAAAElSURBVDjL1ZLdS1tRGMc/vzOzO7OzO7OzO7OzO7OzO7OzO7OzO7OzO7OzO7OzO7OzO7OzO7OzO7OzO7OzO7OzN5xYUv0j8iJk5xhWj3q+q3MkqJdUdRf8…
-
   <style>
     body {
       background: url('https://th.bing.com/th/id/OIP.21HAWGFM1TJhxFlB-7l0zgHaEo?pid=ImgDet&rs=1') center/cover fixed no-repeat;
@@ -84,63 +82,79 @@
         z-index:-1; 
         background:url('https://airflow.ind.br/wp-content/uploads/2018/03/bg_slide.png') center/cover fixed no-repeat; 
         opacity:.3; 
-        animation-name:bgAnimation; 
+        animation-name:bg-animation; 
         animation-duration:20s; 
         animation-timing-function:linear; 
-        animation-iteration-count:infinite;
-    }
-
-    @keyframes bgAnimation {
-        0% {background-position:center top;}
-        50% {background-position:center bottom;}
-        100% {background-position:center top;}
+        animation-iteration-count:infinite; 
+        animation-direction:normal; 
+        animation-fill-mode:none; 
+        animation-play-state:running;
     }
     
-    /* Orange Triangle Icon */
+    @keyframes bg-animation {
+        from {background-position:left top;}
+        to {background-position:right bottom;}
+    }
+    
+    /* Keyframe Animation */
+    .container {
+        animation-name:keyframe-animation; 
+        animation-duration:2s; 
+        animation-timing-function:ease-in-out; 
+        animation-iteration-count:infinite; 
+        animation-direction:normal; 
+        animation-fill-mode:none; 
+        animation-play-state:running;
+    }
+    
+    @keyframes keyframe-animation {
+        from {transform:translateY(0);}
+        to {transform:translateY(10px);}
+    }
+    
+    /* Triangle Icon */
     .icon {
-        background-color: black;
-        height: 50px;
-        width: 50px;
-        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-        display: inline-block;
-        margin-right: 10px;
+        width:50px; 
+        height:50px; 
+        background-color:black; 
+        clip-path:polygon(50% 0%, 0% 100%, 100% 100%); 
+        display:inline-block; 
+        margin-right:10px;
     }
     
-    .icon::before {
-        content:'';
-        position:absolute; 
+    .icon:before {
+        content:""; 
+        display:block; 
+        width:20px; 
+        height:20px; 
+        background-color:#ff7f50; 
+        position:relative; 
         top:-10px; 
-        left:-10px; 
-        width:70%; 
-        height:70%;
-        background-color:#FFA500; 
-        clip-path:polygon(50% 0%, 0% 100%, 100% 100%);
+        left:-15px; 
+        transform:rotate(45deg);
     }
     
   </style>
 </head>
 <body>
+  
   <div class="container">
+    
     <div class="icon"></div>
+    
     <h1>Welcome to Lefay</h1>
-    <p>Your one-stop destination for all your travel needs</p>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    
     <div class="button-container">
-      <a class="button" href="#">
-        <img src="https://img.icons8.com/material-outlined/24/000000/search--v1.png"/>
-        Search Flights
-      </a>
       
-      <a class="button" href="#">
-        <img src="https://img.icons8.com/material-outlined/24/000000/hotel.png"/>
-        Book Hotels
-      </a>
+      <a href="#" class="button"><img src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-instagram-square2-512.png">Follow us on Instagram</a>
       
-      <a class="button" href="#">
-        <img src="https://img.icons8.com/material-outlined/24/000000/car.png"/>
-        Rent Cars
-      </a>
+      <a href="#" class="button"><img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png">Like us on Facebook</a>
+      
     </div>
     
   </div>
+
 </body>
 </html>
