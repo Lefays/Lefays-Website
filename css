@@ -1,193 +1,122 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Lefay</title>
-  <style>
-    body {
-      background: url('https://th.bing.com/th/id/OIP.21HAWGFM1TJhxFlB-7l0zgHaEo?pid=ImgDet&rs=1') center/cover fixed no-repeat;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
+/* Set the background color and font family for the entire page */
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+}
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 50px;
-    }
+/* Style the header section */
+header {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
 
-    h1 {
-      color: #fff;
-      font-size: 48px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px #000;
-    }
+/* Style the logo */
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+}
 
-    p {
-      color: #fff;
-      font-size: 24px;
-      line-height: 1.5;
-      margin-bottom: 40px;
-      text-shadow: 2px 2px #000;
-    }
+/* Style the navigation menu */
+nav {
+  display: flex;
+}
 
-    .button-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 40px;
-    }
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-    .button {
-      display: inline-block;
-      background-color: white; 
-      color: #555;
-      padding: 16px 32px;
-      margin: 0 10px;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: bold;
-      font-size: 20px;
-      transition: all 0.3s ease-in-out;
-    }
+nav li {
+  margin-left: 20px;
+}
 
-    .button:hover {
-      opacity: 0.8;
-    }
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
 
-    .button img {
-      height: 24px;
-      margin-right: 10px;
-    }
-    
-    /* Background Animation */
-    body:before {
-        content:'';
-        position:fixed; 
-        top:0; 
-        left:0; 
-        width:100%; 
-        height:100%;
-        z-index:-1; 
-        background:url('https://airflow.ind.br/wp-content/uploads/2018/03/bg_slide.png') center/cover fixed no-repeat; 
-        opacity:.3; 
-        animation:bg-animation 60s ease infinite
-    }
-    
-    @keyframes bg-animation {
-        from { transform: scale(1) translateX(0); }
-        to { transform: scale(1.5) translateX(-10%); }
-    }
-    
-    .my-dog-container {
-      position: relative;
-      margin-top: 60px;
-    }
-    
-    .my-dog-title {
-      color: #fff;
-      font-size: 28px;
-      font-weight: bold;
-      text-shadow: 2px 2px #000;
-    }
-    
-    .arrow {
-      color: #fff;
-      font-size: 36px;
-      margin-top: 10px;
-    }
-    
-    .dog-image {
-      margin-top: 20px;
-    }
-    
-    .dog-image img {
-      max-width: 100%;
-      height: auto;
-    }
-    
-    /* Animations */
-    
-    /* Button Pulse */
-    
-    .button-container:hover .button {
-      animation-name: pulse-animation;
-      animation-duration: 1s;
-      animation-iteration-count: infinite;
-    }
-    
-    @keyframes pulse-animation {
-      from { transform: scale(1); }
-      to { transform: scale(1.1); }
-    }
-    
-    /* Arrow Bounce */
-    
-    .arrow:hover {
-      animation-name: bounce-animation;
-      animation-duration: 1s;
-      animation-iteration-count: infinite;
-    }
-    
-    @keyframes bounce-animation {
-      from { transform: translateY(0); }
-      to { transform: translateY(10px); }
-    }
-    
-    /* Dog Rotate */
-    
-    .my-dog-container:hover .dog-image img {
-      animation-name: rotate-animation;
-      animation-duration: 2s;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
-    }
-    
-    @keyframes rotate-animation {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-    }
-    
-    /* Dog Shake */
-    
-    .my-dog-container:hover .dog-image img {
-        animation-name: shake-animation;
-        animation-duration: 0.5s;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
-    }
-    
-    @keyframes shake-animation {
-        from { transform: translateX(0); }
-        to { transform: translateX(10px); }
-    }
+/* Style the main section */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
 
-    /* Dog Grow */
-    
-    .my-dog-container:hover .dog-image img {
-        animation-name: grow-animation;
-        animation-duration: 0.5s;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
-        transform-origin:center bottom; 
-    }
-    
-    @keyframes grow-animation {
-        from { transform: scale(1); }
-        to { transform: scale(1.05); }
-    }
-    
-    
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Lefay</h1>
-    <p>Hello! Welcome to my website. My name is Lefay and I'm passionate about gaming and content creation. Feel free to check out my latest videos/streams!</p>
+/* Style the profile picture */
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 
-    <div class="button-container">
-      <a class="button" href="https://twitter.com/Doccy1234" target="_blank"><img src="https://th.bing.com/th?id=OIP.eZEdp__KVcYwYx4YBQzVsAHaHb&w=249&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2" alt="Twitter Logo">Twitter</a>
-      <a class="button" href="https://www.youtube.com/@Lefay_IS" target="_blank"><img src="https://th.bing.com/th?id=OIP.aByvAl4Fl4Dk3N9fA3IudwHaFM&w=298&h=209&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2" alt="YouTube Logo">YouTube</a>
-      <a class="button" href="https://www.twitch.tv/lefay_is" target="_blank"><img src="https://th.bing.com/th?id=OIP.Lmpd_vWhUPT6fz1JHr9D2gHaHv&w=244&h=255&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2" alt="Twitch Logo">Twitch</a>
-      <a class="button" href="https://discord.gg/AR4VCrJpRH" target="_blank"><img
+/* Style the name and title */
+.name {
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.title {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+/* Style the social media links */
+.social-media {
+  display: flex;
+  margin-top: 40px;
+}
+
+.social-media a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-media a:hover {
+  opacity: .8;
+}
+
+.social-media i {
+  font-size: 20px;
+}
+
+/* Add animation to the social media links */
+.social-media a:nth-child(1) i {
+    animation-delay: .1s;
+}
+
+.social-media a:nth-child(2) i {
+    animation-delay: .2s;
+}
+
+.social-media a:nth-child(3) i {
+    animation-delay: .3s;
+}
+
+.social-media a:nth-child(4) i {
+    animation-delay: .4s;
+}
+
+.social-media a:nth-child(5) i {
+    animation-delay: .5s;
+}
+
+@keyframes social-media-animation {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
