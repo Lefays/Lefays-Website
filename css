@@ -153,16 +153,32 @@
     
     .my-dog-container:hover .dog-image img {
         animation-name: shake-animation;
-        animation-duration: 1s;
+        animation-duration: 0.5s;
         animation-iteration-count: infinite;
         animation-timing-function: linear;
     }
     
     @keyframes shake-animation {
         from { transform: translateX(0); }
-        to { transform: translateX(-10px); }
+        to { transform: translateX(10px); }
     }
 
+    /* Dog Grow */
+    
+    .my-dog-container:hover .dog-image img {
+        animation-name: grow-animation;
+        animation-duration: 0.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        transform-origin:center bottom; 
+    }
+    
+    @keyframes grow-animation {
+        from { transform: scale(1); }
+        to { transform: scale(1.05); }
+    }
+    
+    
   </style>
 </head>
 <body>
@@ -174,17 +190,4 @@
       <a class="button" href="https://twitter.com/Doccy1234" target="_blank"><img src="https://th.bing.com/th?id=OIP.eZEdp__KVcYwYx4YBQzVsAHaHb&w=249&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2" alt="Twitter Logo">Twitter</a>
       <a class="button" href="https://www.youtube.com/@Lefay_IS" target="_blank"><img src="https://th.bing.com/th?id=OIP.aByvAl4Fl4Dk3N9fA3IudwHaFM&w=298&h=209&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2" alt="YouTube Logo">YouTube</a>
       <a class="button" href="https://www.twitch.tv/lefay_is" target="_blank"><img src="https://th.bing.com/th?id=OIP.Lmpd_vWhUPT6fz1JHr9D2gHaHv&w=244&h=255&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2" alt="Twitch Logo">Twitch</a>
-      <a class="button" href="https://discord.gg/AR4VCrJpRH" target="_blank"><img src="https://th.bing.com/th/id/OIP.EZkdm25nbQDs_PjFN8hmewAAAA?pid=ImgDet&rs=1" alt="Discord Logo">Discord</a>
-    </div>
-    
-    <div class="my-dog-container">
-      <h2 class="my-dog-title">My Dog</h2>
-      <div class="arrow">&#x2193;</div>
-      <div class="dog-image">
-       
-        <img src="https://media.discordapp.net/attachments/1122521939982950451/1122556871790821456/IMG_20230325_142334.png?width=507&height=676" alt="My Dog">
-      </div>
-    </div>
-  </div>
-</body>
-</html>
+      <a class="button" href="https://discord.gg/AR4VCrJpRH" target="_blank"><img
