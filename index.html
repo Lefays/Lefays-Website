@@ -14,7 +14,7 @@
     .container {
       max-width: 800px;
       margin: 0 auto;
-      padding: 80px;
+      padding: 50px;
     }
 
     h1 {
@@ -36,7 +36,7 @@
     .button-container {
       display: flex;
       justify-content: center;
-      margin-top: 60px;
+      margin-top: 40px;
     }
 
     .button {
@@ -49,8 +49,7 @@
       border-radius: 4px;
       font-weight: bold;
       font-size: 20px;
-      transition: opacity 0.3s ease-in-out;
-      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease-in-out;
     }
 
     .button:hover {
@@ -71,14 +70,41 @@
         width:100%; 
         height:100%;
         z-index:-1; 
-        background:url('https://airflow.ind.br/wp-content/uploads/2018/0…[omitted]
-        
+        background:url('https://airflow.ind.br/wp-content/uploads/2018/03/bg_slide.png') center/cover fixed no-repeat; 
+        opacity:.3; 
+        animation:bg-animation 60s ease infinite
+    }
+    
     @keyframes bg-animation {
-        ...
+        from { transform: scale(1) translateX(0); }
+        to { transform: scale(1.5) translateX(-10%); }
     }
     
     .my-dog-container {
-        ...
+      position: relative;
+      margin-top: 60px;
+    }
+    
+    .my-dog-title {
+      color: #fff;
+      font-size: 28px;
+      font-weight: bold;
+      text-shadow: 2px 2px #000;
+    }
+    
+    .arrow {
+      color: #fff;
+      font-size: 36px;
+      margin-top: 10px;
+    }
+    
+    .dog-image {
+      margin-top: 20px;
+    }
+    
+    .dog-image img {
+      max-width: 100%;
+      height: auto;
     }
     
   </style>
@@ -86,17 +112,22 @@
 <body>
   <div class="container">
     <h1>Lefay</h1>
-    <p>Welcome to Lefay, a magical place where dreams come true.</p>
+    <p>Hello! Welcome to my website. My name is Lefay and I'm passionate about gaming and content creation. Feel free to check out my latest videos/streams!</p>
 
     <div class="button-container">
-      <a href="#" class="button">
-        <img src="https://iconarchive.com/download/i108127/google/noto-emoji-animals-nature/22215-dog.ico" alt="Dog Icon">
-        My Dog
-      </a>
-      <a href="#" class="button">
-        <img src="https://iconarchive.com/download/i108127/google/noto-emoji-animals-nature/22221-cat.ico" alt="Cat Icon">
-        My Cat
-      </a>
+      <a class="button" href="https://twitter.com/Doccy1234" target="_blank"><img src="https://th.bing.com/th?id=OIP.eZEdp__KVcYwYx4YBQzVsAHaHb&w=249&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2" alt="Twitter Logo">Twitter</a>
+      <a class="button" href="https://www.youtube.com/@Lefay_IS" target="_blank"><img src="https://th.bing.com/th?id=OIP.aByvAl4Fl4Dk3N9fA3IudwHaFM&w=298&h=209&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2" alt="YouTube Logo">YouTube</a>
+      <a class="button" href="https://www.twitch.tv/lefay_is" target="_blank"><img src="https://th.bing.com/th?id=OIP.Lmpd_vWhUPT6fz1JHr9D2gHaHv&w=244&h=255&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2" alt="Twitch Logo">Twitch</a>
+      <a class="button" href="https://discord.gg/AR4VCrJpRH" target="_blank"><img src="https://th.bing.com/th/id/OIP.EZkdm25nbQDs_PjFN8hmewAAAA?pid=ImgDet&rs=1" alt="Discord Logo">Discord</a>
+    </div>
+    
+    <div class="my-dog-container">
+      <h2 class="my-dog-title">My Dog</h2>
+      <div class="arrow">&#x2193;</div>
+      <div class="dog-image">
+       
+        <img src="https://media.discordapp.net/attachments/1122521939982950451/1122556871790821456/IMG_20230325_142334.png?width=507&height=676" alt="My Dog">
+      </div>
     </div>
   </div>
 </body>
