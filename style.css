@@ -1,6 +1,12 @@
 :root {
   --card-height: 300px;
   --card-width: calc(var(--card-height) / 1.2);
+  --card-bg-color: #191c29;
+  --hover-shadow-color: rgba(138, 43, 226, 0.75); /* Purple */
+  --glow-color: rgba(138, 43, 226, 0.5); /* Glow effect color */
+  --gradient-color1: #6a11cb; /* Gradient color 1 */
+  --gradient-color2: #2575fc; /* Gradient color 2 */
+  --text-glow: rgba(255, 255, 255, 0.8);
 }
 
 * {
@@ -14,31 +20,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #191c29;
+  background: linear-gradient(135deg, var(--gradient-color1), var(--gradient-color2));
+  font-family: 'Arial', sans-serif;
 }
 
-/* First Card */
-.card {
-  width: var(--card-width);
-  height: var(--card-height);
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  padding: 0 36px;
-  perspective: 2500px;
-  margin: 0 50px;
-  background: #191c29;
-}
-
-.card:hover .wrapper {
-  transform: perspective(900px) translateY(-5%) rotateX(390deg) translateZ(0);
-  box-shadow: 2px 35px 32px -8px rgba(138, 43, 226, 0.75); /* Purple shadow color */
-  -webkit-box-shadow: 2px 35px 32px -8px rgba(138, 43, 226, 0.75); /* Purple shadow color */
-  -moz-box-shadow: 2px 35px 32px -8px rgba(138, 43, 226, 0.75); /* Purple shadow color */
-}
-
-/* Second Card */
+/* Global Card Styling */
+.card,
 .card2 {
   width: var(--card-width);
   height: var(--card-height);
@@ -49,56 +36,127 @@ body {
   padding: 0 36px;
   perspective: 2500px;
   margin: 0 50px;
-  background: #191c29;
+  background: var(--card-bg-color);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
+.card:hover,
+.card2:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 50px var(--hover-shadow-color);
+}
+
+/* Wrapper Styling with Glow Effect */
+.wrapper {
+  transition: all 0.6s ease-in-out;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle, var(--glow-color) 20%, transparent 70%);
+  filter: blur(20px);
+  opacity: 0.5;
+}
+
+.card:hover .wrapper,
 .card2:hover .wrapper {
-  transform: perspective(900px) translateY(-5%) rotateX(385deg) translateZ(0);
-  box-shadow: 2px 35px 32px -8px rgba(138, 43, 226, 0.75); /* Purple shadow color */
-  -webkit-box-shadow: 2px 35px 32px -8px rgba(138, 43, 226, 0.75); /* Purple shadow color */
-  -moz-box-shadow: 2px 35px 32px -8px rgba(138, 43, 226, 0.75); /* Purple shadow color */
+  transform: perspective(900px) translateY(-5%) rotateX(15deg);
+  opacity: 0.8;
 }
 
+/* Cover Image */
 .cover-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.5s ease-out;
 }
 
-.wrapper {
-  transition: all 0.5s;
-  position: absolute;
-  width: 100%;
-  z-index: -1;
+.card:hover .cover-image,
+.card2:hover .cover-image {
+  transform: scale(1.1);
 }
 
-.card:hover .wrapper::before,
-.wrapper::after {
-  opacity: 1;
-}
-
-.card:hover .wrapper::after {
-  height: 120px;
-}
-
+/* Title Styling with Text Glow */
 .title {
   width: 100%;
-  transition: transform 0.5s;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px var(--text-glow), 0 0 20px var(--text-glow);
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-.card:hover .title {
+.card:hover .title,
+.card2:hover .title {
   transform: translate3d(0%, -50px, 100px);
+  opacity: 1;
 }
 
+/* Character Animation */
 .character {
-  width: 100%;
+  width: 80%;
   opacity: 0;
-  transition: all 0.5s;
+  transition: all 0.6s ease-in-out;
   position: absolute;
   z-index: -1;
+  transform: translate3d(0%, 20%, 0px) scale(0.95);
 }
 
-.card:hover .character {
+.card:hover .character,
+.card2:hover .character {
   opacity: 1;
-  transform: translate3d(0%, -30%, 100px);
+  transform: translate3d(0%, -20%, 50px) scale(1);
+}
+
+/* Glowing Border Effect */
+.card::before,
+.card2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: linear-gradient(45deg, var(--gradient-color1), var(--gradient-color2));
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 0;
+  filter: blur(5px);
+}
+
+.card:hover::before,
+.card2:hover::before {
+  opacity: 0.8;
+}
+
+/* Add Particle Effect */
+.card:hover .wrapper::after,
+.card2:hover .wrapper::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 120px;
+  bottom: 0;
+  left: 0;
+  background: radial-gradient(circle, var(--hover-shadow-color) 10%, transparent 70%);
+  opacity: 0.7;
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.9;
+  }
 }
